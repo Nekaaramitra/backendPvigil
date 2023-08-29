@@ -187,7 +187,7 @@ const getOfficialUser = asyncHandler(async (req, res) => {
   const user = await OfficialUser.findById(req.user._id).populate({
     path: "assignedComplaints",
     select: "complaint_id raid.nuisance_creator.action_Initiated",
-    options: { sort: { createdAt: -1, updatedAt: -1 } }, // Sort the populated array
+    options: { sort: { updatedAt: -1, createdAt: -1 } }, // Sort the populated array
   });
 
   if (user) {
