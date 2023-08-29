@@ -149,8 +149,8 @@ const getComplaints = asyncHandler(async (req, res) => {
   try {
     // console.log("Get Complaints Hitted");
     const complaints = await Complaint.find({ user: req.user._id }).sort({
-      createdAt: -1,
       updatedAt: -1,
+      createdAt: -1,
     });
     res.status(200).json(complaints);
   } catch (error) {
