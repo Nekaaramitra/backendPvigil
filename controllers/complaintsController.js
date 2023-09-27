@@ -163,7 +163,7 @@ const getAllComplaints = asyncHandler(async (req, res) => {
   try {
     const complaints = await Complaint.find()
       .populate("assignedTo", "name email userId")
-      .sort({ createdAt: -1 });
+      .sort({ updatedAt: -1, createdAt: -1 });
 
     res.status(200).json(complaints);
   } catch (error) {
