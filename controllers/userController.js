@@ -27,6 +27,7 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new Error("Email already in use");
   }
   // Get Useragent
+  // this
   // const ua = parser(req.headers["user-agent"]);
   // const userAgent = [ua.ua];
 
